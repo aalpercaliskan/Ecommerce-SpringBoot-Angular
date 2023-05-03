@@ -1,0 +1,88 @@
+<div class="container px-4 px-lg-5 my-5">
+    <div class="row gx-4 gx-lg-5 align-items-center">
+        <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0"
+                src={{advertisemet.imageUrl}} alt="..." /></div>
+        <div class="col-md-6">
+            <h1 class="display-5 fw-bolder">{{advertisemet.name}}</h1>
+
+            <table class="table mt-5">
+                <tr >
+                    <th width="25%"></th>
+                    <th width="75%"></th>
+                    
+                </tr>
+
+                <tr class="mb-4">
+                    <td class="fw-bolder">
+                        <div class="mb-2">Gender:</div>
+                        
+                    </td>
+                    <td>
+                        <div class="mb-2">{{advertisemet.gender}}</div>
+                    </td>
+                </tr>
+
+                <tr  class="mb-4">
+                    <td class="fw-bolder">
+                        <div class="mb-2">Genus:</div> 
+                    </td>
+                    <td>
+                        <div class="mb-2">{{advertisemet.genus}}</div>
+                    </td>
+                </tr>
+
+                <tr  class="mb-4">
+                    <td class="fw-bolder">
+                        <div class="mb-2">Age:</div>
+                    </td>
+                    <td>
+                        <div class="mb-2">{{advertisemet.age}}</div>
+                    </td>
+                </tr>
+
+                <tr class="mb-4"> 
+                    <td class="fw-bolder">
+                        <div class="mb-2">Phone Number:</div>
+                    </td>
+                    <td>
+                        <div class="mb-2">{{advertisemet.description}}</div>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<section class="py-5 bg-light">
+    <div class="container px-4 px-lg-5 mt-5">
+        <h2 class="fw-bolder mb-4">Related Advertisements</h2>
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let relatedAdvertisement of relatedAdvertisements" class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <a routerLink="/advertisements/{{relatedAdvertisement.id}}">
+                        <img class="card-img-top" src={{relatedAdvertisement.imageUrl}}  />
+                    </a>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <a routerLink="/advertisements/{{relatedAdvertisement.id}}">
+                                <h5 class="fw-bolder">{{relatedAdvertisement.name}}</h5>
+                                <div *ngIf="relatedAdvertisement.name.length < 20">
+                                    <br>
+                                </div>
+                            </a>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

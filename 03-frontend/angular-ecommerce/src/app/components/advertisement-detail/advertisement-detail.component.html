@@ -1,0 +1,123 @@
+<div class="container px-4 px-lg-5 mt-5">
+  
+    <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-2-5 justify-content-center">
+        <form [formGroup]="advertisementFormGroup" (ngSubmit)="onSubmit()">
+
+            <!--Billing Address form group -->
+            <div class="form-area">
+                <h3>Update Advertisement</h3>
+
+                <div class="row">
+                    <div class="col-md-2"> <label>Species</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+    
+                    <!--Billing Address form group -->
+                            <select formControlName="species" (change)="getGenus()">
+                                <option *ngFor="let tempSpecies of speciesList" [ngValue]="tempSpecies">
+                                    {{tempSpecies}}
+                                </option>
+                    
+                            </select>
+                            
+                               
+                            
+                            <div *ngIf="species?.invalid && (species?.dirty || species?.touched)" class="alert alert-danger mt-1">
+                                <div *ngIf="species?.errors?.['required']">
+                                    Species is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"> <label>Gender</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <!--Billing Address form group -->
+                            <select formControlName="gender">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select> 
+                            
+                            <div *ngIf="gender?.invalid && (gender?.dirty || gender?.touched)" class="alert alert-danger mt-1">
+                                <div *ngIf="gender?.errors?.['required'] || gender?.errors?.['onlyWhitespace']">
+                                    Gender is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"> <label>Genus</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <select formControlName="genus">
+                                    <option *ngFor="let tempGenus of genusList" [ngValue]="tempGenus">
+                                        {{tempGenus}}
+                                    </option>
+                                </select>
+                            <div *ngIf="genus?.invalid && (genus?.dirty || genus?.touched)" class="alert alert-danger mt-1">
+                                <div *ngIf="genus?.errors?.['required'] || genus?.errors?.['onlyWhitespace']">
+                                    Genus is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"> <label>Age</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <input formControlName="age" type="text">
+
+                            <div *ngIf="age?.invalid && (age?.dirty || age?.touched)" class="alert alert-danger mt-1">
+                                <div *ngIf="age?.errors?.['required'] || age?.errors?.['onlyWhitespace']">
+                                    Age is required
+                                </div>
+
+                                <div *ngIf="age?.errors?.['pattern']">
+                                    Age must be a valid number
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"> <label>Phone Number</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <input formControlName="description" type="text">
+
+                            <div *ngIf="description?.invalid && (description?.dirty || description?.touched)" class="alert alert-danger mt-1">
+                                <div *ngIf="description?.errors?.['required']">
+                                    Phone number is required
+                                </div>
+
+                                <div *ngIf="description?.errors?.['pattern']">
+                                    Phone number must be 10 digits long
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Submit button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" >Save</button>
+
+                <button type="submit" class="btn btn-light ms-4" routerLink="/advertisement-history">Cancel</button>
+            </div>
+
+
+        </form>
+</div>
+</div>
+

@@ -1,0 +1,54 @@
+<div class="container alper">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let advertisement of advertisements" class="col mb-5">
+                <div class="card h-1000">
+                    <!-- Product image-->
+                    <a routerLink="/advertisements/{{advertisement.id}}">
+                        <img class="card-img-top" src={{advertisement.imageUrl}}  />
+                    </a>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <a routerLink="/advertisements/{{advertisement.id}}">
+                                <h5 class="fw-bolder">{{advertisement.name}}</h5>
+                                <div *ngIf="advertisement.name.length < 20">
+                                    <br>
+                                </div>
+                            </a>
+                           
+                          
+
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+        <div *ngIf="advertisements?.length == 0" class="alert alert-warning col-md-12 text-center" role="alert">
+            No advertisements found
+        </div>
+    </div>
+</div>
+<div *ngIf="advertisements?.length != 0">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="mt-2 px-alper">
+            <ngb-pagination [(page)]="pageNumber" [pageSize]="pageSize" [collectionSize]="totalElements" [maxSize]="5"
+                [boundaryLinks]="true" (pageChange)="listAdvertisements() ">
+            </ngb-pagination>
+        </div>
+    </div>
+
+
+    <div class="row gx-4 mb-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="col-md-3 mt-2 px-5" style="text-align: center;">
+            <span class="mr-2">Page Size </span>
+            <select #myPageSelect (change)="updatePageSize(myPageSelect.value)">
+                <option selected="true">10</option>
+                <option>20</option>
+                <option>50</option>
+            </select>
+        </div>
+    </div>
+</div>

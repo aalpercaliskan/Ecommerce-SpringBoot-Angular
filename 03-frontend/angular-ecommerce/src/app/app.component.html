@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand mb-0" href="/products">
+      <button type="submit" routerLink="/products">
+        <img src="assets/images/logo.png" alt="logoo" class="img-responsive mb-1" width="25" height="25">
+        PetLover
+      </button>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <app-search></app-search>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4"></ul>
+    <app-login-status></app-login-status>
+    <app-cart-status></app-cart-status>
+  </div>
+  
+</nav>
+
+<app-product-category-menu></app-product-category-menu>
+
+<div class="container alper">
+  
+    <router-outlet></router-outlet>
+  
+</div>
+
+<footer class="py-5 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; Alper 2023</p>
+  </div>
+</footer>

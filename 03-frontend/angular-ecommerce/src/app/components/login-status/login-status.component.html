@@ -1,0 +1,44 @@
+<div class="login-status-header">
+
+    <div *ngIf="!isAuthenticated" class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <li class="nav-item dropdown" >
+                <a class="nav-link" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button *ngIf="!isAuthenticated" class="btn btn-outline-light-2 mx-4" type="submit" routerLink="/login">
+                    <i class="fa-regular fa-user fa-lg"></i>
+           
+            </button>
+        </a>
+        </li>
+    </ul>
+    
+</div>
+    <!--
+    <button *ngIf="isAuthenticated" (click)="logout()" class="btn btn-outline-light-2" type="submit" >
+        <i class="fa-solid fa-right-to-bracket fa-rotate-180"></i>
+        Logout
+        <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
+    </button>
+    -->
+    <div *ngIf="isAuthenticated" class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <li class="nav-item dropdown" >
+                <a class="nav-link" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button  class="btn btn-outline-light-2 mx-4" type="submit">
+                        <i class="fa-solid fa-user fa-lg"></i>
+                    </button>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item"  routerLink="/advertisement-history">Advertisements</a></li>
+                    <li><a class="dropdown-item"  routerLink="/order-history">Orders</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                  <!--  <li><a class="dropdown-item"  routerLink="/members">Member</a></li>-->
+                    <li><a class="dropdown-item" routerLink (click)="logout()">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+
+    
+</div> 

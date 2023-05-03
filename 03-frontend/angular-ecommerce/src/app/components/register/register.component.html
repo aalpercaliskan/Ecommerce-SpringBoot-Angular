@@ -1,0 +1,78 @@
+<div class="container px-4 px-lg-7 mt-5">
+
+    <h3>Create new account</h3>
+    <form [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()">
+        <div class="my-sm-5"></div>
+        <div *ngIf="!isRegistered && isSubmit" class="alert alert-warning mt-2">
+            There is a user with this email
+        </div>
+        <div formGroupName="customer">
+
+            <div class="form-outline mb-4">
+                <input type="text" placeholder="First name" class="form-control" formControlName="firstName">
+                <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)" class="alert alert-danger mt-2">
+                    <div *ngIf="firstName?.errors?.['required'] || firstName?.errors?.['onlyWhitespace']">
+                        First Name is required
+                    </div>
+
+                    <div *ngIf="firstName?.errors?.['customMinlength']">
+                        First Name must be at least 2 characters long
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="text" placeholder="Last name" class="form-control" formControlName="lastName"/>
+                <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)" class="alert alert-danger mt-2">
+                    <div *ngIf="lastName?.errors?.['required'] || lastName?.errors?.['onlyWhitespace']">
+                        Last Name is required
+                    </div>
+
+                    <div *ngIf="lastName?.errors?.['customMinlength']">
+                        Last Name must be at least 2 characters long
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="email" placeholder="Email" class="form-control" formControlName="email"/>
+                <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger mt-2">
+                    <div *ngIf="email?.errors?.['required']">
+                        Email is required
+                    </div>
+
+                    <div *ngIf="email?.errors?.['pattern']">
+                        Email must be a valid email address format
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="form-outline mb-4">
+                <input type="password" placeholder="Password" class="form-control" formControlName="password"/>
+                <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger mt-2">
+                    <div *ngIf="password?.errors?.['required']">
+                        Password is required
+                    </div>
+
+                    <div *ngIf="password?.errors?.['pattern']">
+                        <p>Must be at least 8 characters in length</p> 
+                        <p>Must contain lowercase letter</p>
+                        <p>Must contain appercase letter</p>
+                        <p>Must contain number</p>
+                     
+                    </div>
+                </div>
+            </div>
+
+                        
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-block mb-3">Sign up</button>
+            </div>
+
+            <div class="text-center">
+                <p>Already member? <a routerLink="/login">Sign in</a></p>
+            </div>
+        </div>
+    </form>
+</div>

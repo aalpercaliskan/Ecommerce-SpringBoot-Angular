@@ -1,0 +1,91 @@
+<div class="container alper">
+<div class="container px-4 px-lg-5 mt-5">
+    
+    <h3>Your Advertisements</h3>
+    <a routerLink="/advertisement-form" class="btn btn-primary mt-3 mb-3">Create Advertisement</a>
+    <div *ngIf="advertisementList.length > 0">
+        <table class="table table-bordered">
+            <tr>
+                <th width="20%">Advertisement Image</th>
+                <th width="40%">Name</th>
+                <th width="20%">Date</th>
+                <th width="20%"></th>
+            </tr>
+
+            <tr *ngFor="let advertisement of advertisementList">
+                <td>
+                    <a routerLink="/advertisements/{{advertisement.id}}">
+                        <img src="{{advertisement.imageUrl}}" class="img-responsive" width="150px">
+                    </a>
+
+                </td>
+
+                <td>
+                    <a routerLink="/advertisements/{{advertisement.id}}">
+                        <h6>{{ advertisement.name}}</h6>
+                    </a>    
+                </td>
+                <td>
+                    {{ advertisement.dateCreated | date: 'medium'}}
+                </td>
+                <td>
+                    <div class="items">
+
+                        <div class="row">
+                            <div class="col mb--1">
+                                <div class=text-center>
+                                    <a routerLink="/advertisement-detail/{{advertisement.id}}">
+                                        <button class="btn btn-outline-orange mt-auto mb-6">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col mb--1">
+                                <div class=text-center>
+                                    <button (click)="remove(advertisement)" class="btn btn-outline-red mt-auto mb-6">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div *ngIf="advertisementList.length == 0" class="alert alert-warning col-md-12 text-center" role="alert">
+        No advertisement found
+    </div>
+
+
+
+</div>
+</div>
+<div *ngIf="advertisementList?.length != 0">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="mt-2 px-alper">
+            <ngb-pagination [(page)]="pageNumber" [pageSize]="pageSize" [collectionSize]="totalElements" [maxSize]="5"
+                [boundaryLinks]="true" (pageChange)="handleAdvertisementHistory() ">
+            </ngb-pagination>
+        </div>
+    </div>
+
+
+    <div class="row gx-4 mb-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="col-md-3 mt-2 px-5" style="text-align: center;">
+            <span class="mr-2">Page Size </span>
+            <select #myPageSelect (change)="updatePageSize(myPageSelect.value)">
+                <option selected="true">10</option>
+                <option>20</option>
+                <option>50</option>
+            </select>
+        </div>
+    </div>
+</div>

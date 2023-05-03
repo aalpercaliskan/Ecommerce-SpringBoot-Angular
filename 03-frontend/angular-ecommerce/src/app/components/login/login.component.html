@@ -1,0 +1,50 @@
+<!--<div class="pt-5">
+    <div id="okta-sign-in-widget" class="pt-5"></div>
+</div>
+-->
+<div class="container px-4 px-lg-7 mt-5">
+  <h3>Sign in to your account</h3>
+ 
+  <form [formGroup]="registerFormGroup" (ngSubmit)="onSubmit()">
+    <div class="my-sm-5"></div>
+
+
+    <div *ngIf="!isAuthenticated && pressSubmit" class="alert alert-danger">
+      There is no user
+    </div>
+    <div *ngIf="isRegistered" class="alert alert-info mt-2">
+      You have successfully registered. Please sign in
+    </div>
+    <div formGroupName="customer">
+      <div class="form-outline mb-4">
+        <input type="email" placeholder="Email" formControlName="email" class="form-control" />
+      </div>
+
+      <div class="form-outline mb-4">
+        <input type="password" placeholder="Password" formControlName="password" class="form-control" />
+      </div>
+    </div>
+
+    <!---
+    <div class="form-check d-flex justify-content-center mb-4">
+      <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" ngModel="isChecked"
+        aria-describedby="registerCheckHelpText" />
+      <label class="form-check-label" for="registerCheck">
+        Remember me
+      </label>
+    </div>
+  -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+    </div>
+
+    <div class="text-center">
+      <p>Not a member? <a routerLink="/register">Sign up</a></p>
+    </div>
+  </form>
+
+
+
+
+
+</div>

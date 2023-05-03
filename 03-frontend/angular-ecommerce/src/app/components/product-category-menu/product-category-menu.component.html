@@ -1,0 +1,84 @@
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+     
+     
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 px-alper2">
+            <li class="nav-item dropdown" >
+                <a class="nav-link dropdown-toggle fw-bolder" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dog</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" routerLink="/advertisements/category/dog">Advertisements</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <div *ngFor="let productCategory of productCategories">
+                        <div *ngIf="productCategory.animalSpecies.includes('Dog')">
+                            <li><a class="dropdown-item "  routerLink="/category/{{productCategory.id}}">{{productCategory.categoryName}}</a></li>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <li class="nav-item dropdown align-item-center" >
+                <a class="nav-link dropdown-toggle fw-bolder" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cat</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" routerLink="/advertisements/category/cat">Advertisements</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <div *ngFor="let productCategory of productCategories">
+                        <div *ngIf="productCategory.animalSpecies.includes('Cat')">
+                            <li><a class="dropdown-item"  routerLink="/category/{{productCategory.id}}">{{productCategory.categoryName}}</a></li>
+                        </div>
+                    </div>
+                   
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+
+    </div>
+  </nav>
+
+<!---
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-5 px-lg-6">
+     
+     
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <li class="nav-item dropdown" >
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ürünler</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" >İlanlar</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item"  >fbdd</a></li>
+                  
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+            <li class="nav-item dropdown" >
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ürünler</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" >İlanlar</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item"  >fbdd</a></li>
+                  
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+    </div>
+  </nav>
+  -->

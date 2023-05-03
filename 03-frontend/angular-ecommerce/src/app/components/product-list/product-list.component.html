@@ -1,0 +1,137 @@
+<!--
+<div class="main-content">
+    <div class="section-content section-content-p200"> 
+        <div class="container-fluid">
+            <div class="row">
+
+               <div *ngFor="let product of products" class="col-md-3">
+                    <div class="product-box">
+                        
+                        <a routerLink="/products/{{product.id}}">
+                            <img src="{{product.imageUrl}}" class="img-responsive"/>
+                        </a>
+                        <br>
+                        <a routerLink="/products/{{product.id}}">
+                            <h1>{{product.name}}</h1>
+                        </a>
+                        
+                        <div class="price">{{ product.unitPrice | currency:'USD'}}</div>
+                        
+                        <button (click)="addToCart(product)" class="btn btn-primary btn-sm">Add to cart</button>
+                    </div>
+               </div>
+            
+              
+                <div *ngIf="products?.length == 0" class="alert alert-warning col-md-12" role="alert">
+                    No products found.
+                </div>
+
+            </div>
+
+            
+            <div class="footer-pagination">
+                <div class="row">
+                    <div class="col-mid-6"></div>
+
+                    <div class="col-mid-6">
+                        <div class="row">
+                            <div class="col-md-9" style="padding-left: 68%">
+                                <ngb-pagination [(page)] ="pageNumber"
+                                                [pageSize]="pageSize"
+                                                [collectionSize]="totalElements"
+                                                [maxSize]="5"
+                                                [boundaryLinks]="true"
+                                                (pageChange)="listProducts()">
+
+                                </ngb-pagination>
+                            </div>
+                            
+                            <div class="col-md-3 mt-2" style="text-align: right;">
+                                <span class="mr-2">Page Size </span>
+
+                                <select #myPageSelect (change)="updatePageSize(myPageSelect.value)">
+                                    <option>5</option>
+                                    <option selected="true">10</option>
+                                    <option>20</option>
+                                    <option>50</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+        </div>
+    </div>
+
+</div>
+
+-->
+<div class="container alper">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let product of products" class="col mb-5">
+                <div class="card h-1000">
+                    <!-- Product image-->
+                    <a routerLink="/products/{{product.id}}">
+                        <img class="card-img-top" src="{{product.imageUrl}}" />
+                    </a>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <a routerLink="/products/{{product.id}}">
+                                <h5 class="fw-bolder">{{product.name}}</h5>
+                                <div *ngIf="product.name.length < 20">
+                                    <br>
+                                </div>
+                            </a>
+                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                                <div class="bi-star-fill"></div>
+                            </div>
+                            <!-- Product price-->
+                            {{ product.unitPrice | currency:'USD'}}
+
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+
+                        <div class="text-center" (click)="addToCart(product)"><a
+                                class="btn btn-outline-dark mt-auto">Add to
+                                cart</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="products?.length == 0" class="alert alert-warning col-md-12 text-center" role="alert">
+            No products found
+        </div>
+    </div>
+</div>
+<div *ngIf="products?.length != 0">
+    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="mt-2 px-alper">
+            <ngb-pagination [(page)]="pageNumber" [pageSize]="pageSize" [collectionSize]="totalElements" [maxSize]="5"
+                [boundaryLinks]="true" (pageChange)="listProducts() ">
+            </ngb-pagination>
+        </div>
+    </div>
+
+
+    <div class="row gx-4 mb-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div class="col-md-3 mt-2 px-5" style="text-align: center;">
+            <span class="mr-2">Page Size </span>
+            <select #myPageSelect (change)="updatePageSize(myPageSelect.value)">
+                <option selected="true">10</option>
+                <option>20</option>
+                <option>50</option>
+            </select>
+        </div>
+    </div>
+</div>
