@@ -1,10 +1,9 @@
 # Ecommerce-SpringBoot-Angular
 I used Angular for frontend, Spring Boot for backend, MySQL for database and Stripe for payment transactions.
 
-
-![product-list](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/41ca9310-1790-4507-8fe4-2d87697e449b)  
+![localhost_4200_category_2](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/570ef449-b069-4c09-b520-0b90d1f10ec9)
 ---
-![product-detail](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/774a8b86-5f99-4f5e-a4f7-ad7fccc2f23a)  
+![localhost_4200_category_2 (1)](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/41379ed4-f485-45eb-9fb9-44cea3a16914)
 ---
 ![login](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/f6d2f66c-cb1b-4aa5-b638-58fb3091ff9d)  
 ---
@@ -15,4 +14,11 @@ I used Angular for frontend, Spring Boot for backend, MySQL for database and Str
 ![localhost_4200_checkout](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/259c23fb-f2af-4c25-849b-8f357ef63cc7)  
 ---
 ![orders](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/c843182d-366e-4371-b195-0317ff0bdf50)  
-
+---
+![localhost_4200_category_2 (2)](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/c51dd6c2-e50e-4beb-9dad-b276084f8b8f)
+---
+![localhost_4200_category_2 (3)](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/9e77e643-bead-4318-90ad-d5914b1af4e1)
+---
+![localhost_4200_category_2 (1)](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/1c0769ba-e690-4484-82b5-d5b0e6022a11)
+---
+![localhost_4200_category_2 (1)](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/83ce44e2-0835-4e04-9117-f8fa5fe77d58)
