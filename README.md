@@ -1,5 +1,8 @@
 # Ecommerce-SpringBoot-Angular
 I used Angular for frontend, Spring Boot for backend, MySQL for database and Stripe for payment transactions.
+---
+---
+---
 ![login](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/f6d2f66c-cb1b-4aa5-b638-58fb3091ff9d)  
 ---
 ![signup](https://github.com/aalpercaliskan/Ecommerce-SpringBoot-Angular/assets/112978786/b917a65e-2800-4b0e-b9dc-91651a22a326)  
